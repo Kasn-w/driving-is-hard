@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://by3k34uxpjr1s"]
+
+[ext_resource type="Script" uid="uid://dcj3pub2jnjth" path="res://new folder/fake_road.gd" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=84430326]
+script = ExtResource("1_80nbo")
+cam_height = 300.0
+steer_rate = 2000.0

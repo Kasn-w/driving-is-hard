@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://5yw7drnft5xw"]
+
+[ext_resource type="Script" uid="uid://bn6vq6gs4hxyf" path="res://controlsc.gd" id="1_n1api"]
+[ext_resource type="Texture2D" uid="uid://c5ybc0wfnunlh" path="res://sprite/2copy.jpg" id="2_gbfq1"]
+
+[sub_resource type="Gradient" id="Gradient_nbagm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yi81r"]
+gradient = SubResource("Gradient_nbagm")
+
+[sub_resource type="SystemFont" id="SystemFont_n1api"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbfq1"]
+font = SubResource("SystemFont_n1api")
+font_size = 40
+
+[sub_resource type="SystemFont" id="SystemFont_gbfq1"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xta5d"]
+font = SubResource("SystemFont_gbfq1")
+font_size = 30
+
+[node name="Control" type="Control" unique_id=1565979743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n1api")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=97901509]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1406750154]
+modulate = Color(1, 1, 1, 0.87058824)
+z_index = -5
+z_as_relative = false
+position = Vector2(608, 325)
+scale = Vector2(3.0507813, 566)
+texture = SubResource("GradientTexture1D_yi81r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=207620577]
+modulate = Color(1, 1, 1, 0.87058824)
+z_index = -5
+z_as_relative = false
+position = Vector2(816, 491)
+scale = Vector2(0.14424622, 0.14424619)
+texture = ExtResource("2_gbfq1")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=933598880]
+offset_left = 240.0
+offset_top = 80.0
+offset_right = 952.0
+offset_bottom = 145.0
+text = "Control
+"
+label_settings = SubResource("LabelSettings_gbfq1")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1146778626]
+offset_left = 264.0
+offset_top = 144.0
+offset_right = 976.0
+offset_bottom = 330.0
+text = "-Car have 4 gears corresponding to each number on keyboard
+
+-The car accelerate automatically until its hit speed limit
+
+-Use mouse to turn the steering wheel
+
+-Break lower the speed but will not bring the car to a full stop
+
+-Gas tank make your speed limit temporary higer
+
+                  - Tip -
+
+-Try to step up from gear 1 to 2
+   to 3 and 4
+
+-Go fast and don't hit the trees
+
+
+"
+label_settings = SubResource("LabelSettings_xta5d")
+metadata/_edit_lock_ = true
+
+[node name="exit" type="Button" parent="CanvasLayer" unique_id=1197583403]
+self_modulate = Color(1, 0, 0.1510477, 1)
+anchors_preset = -1
+offset_left = 1024.0
+offset_top = 568.0
+offset_right = 1112.0
+offset_bottom = 614.0
+size_flags_horizontal = 0
+text = "close"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="CanvasLayer/exit" to="." method="_on_exit_button_down"]

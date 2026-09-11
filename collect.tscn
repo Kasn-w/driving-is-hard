@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://u3n2kb7ngxgv"]
+
+[ext_resource type="Script" uid="uid://c64wbeakbaxm7" path="res://collect.gd" id="1_d1qwf"]
+[ext_resource type="Texture2D" uid="uid://c584wl0a4m7md" path="res://sprite/images copy.png" id="2_d1qwf"]
+
+[node name="collect" type="Node2D" unique_id=1950802371]
+script = ExtResource("1_d1qwf")
+val = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=78706069]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-3.8146973e-06, 5.722046e-06)
+scale = Vector2(0.7035316, 0.70353156)
+texture = ExtResource("2_d1qwf")

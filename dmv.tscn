@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4m5eie8364nm"]
+
+[ext_resource type="Script" uid="uid://cag8brlnuqmaw" path="res://dmv.gd" id="1_pdu15"]
+[ext_resource type="Texture2D" uid="uid://ddajuiyf1kleu" path="res://sprite/dmv.png" id="2_f8n0m"]
+
+[node name="dmv" type="Node2D" unique_id=1950802371]
+script = ExtResource("1_pdu15")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=78706069]
+position = Vector2(-3.9999962, -725)
+scale = Vector2(50, 50)
+texture = ExtResource("2_f8n0m")
+offset = Vector2(0.9753498, -42.32801)

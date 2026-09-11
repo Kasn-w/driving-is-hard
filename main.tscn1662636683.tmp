@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://mhqept6ilmx3"]
+
+[ext_resource type="Script" uid="uid://d3kg72cwb2vcu" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://d3qbtrakagnae" path="res://icon.svg" id="1_ig7tw"]
+
+[node name="main" type="Node2D" unique_id=384978572]
+script = ExtResource("1_0xm2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1211003727]
+
+[node name="ui" type="Sprite2D" parent="CanvasLayer" unique_id=1812820719]
+self_modulate = Color(1, 1, 1, 0.3372549)
+position = Vector2(576, 324)
+scale = Vector2(9, 5.0625)
+texture = ExtResource("1_ig7tw")
+
+[node name="wheel" type="Sprite2D" parent="CanvasLayer" unique_id=1559987155]
+position = Vector2(803, 446)
+scale = Vector2(2.439941, 2.439941)
+texture = ExtResource("1_ig7tw")

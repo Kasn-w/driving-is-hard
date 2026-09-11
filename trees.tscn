@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqfyb16xi8w4j"]
+
+[ext_resource type="Script" uid="uid://1hd23xkni23q" path="res://trees.gd" id="1_slfv4"]
+[ext_resource type="Texture2D" uid="uid://cp748p5jx8me1" path="res://sprite/tree.png" id="2_slfv4"]
+
+[node name="trees" type="Node2D" unique_id=1950802371]
+script = ExtResource("1_slfv4")
+
+[node name="ts" type="Sprite2D" parent="." unique_id=78706069]
+position = Vector2(22.000004, 12)
+scale = Vector2(3.8166914, 3.5893157)
+texture = ExtResource("2_slfv4")
+offset = Vector2(-1.1920929e-07, -299.49997)

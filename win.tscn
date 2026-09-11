@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dec8ty51sqfnt"]
+
+[ext_resource type="Script" uid="uid://b03jhqlvh6q74" path="res://win.gd" id="1_wao2c"]
+
+[sub_resource type="Gradient" id="Gradient_nbagm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yi81r"]
+gradient = SubResource("Gradient_nbagm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vp5gy"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_yi81r"]
+font_size = 100
+
+[node name="Control" type="Control" unique_id=1565979743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wao2c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=97901509]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1406750154]
+modulate = Color(1, 1, 1, 0.47058824)
+z_index = -5
+z_as_relative = false
+position = Vector2(608, 232)
+scale = Vector2(3.0507813, 380.00003)
+texture = SubResource("GradientTexture1D_yi81r")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=705621428]
+offset_left = 355.99994
+offset_top = 288.00003
+offset_right = 781.0
+offset_bottom = 357.00003
+text = "Time :"
+label_settings = SubResource("LabelSettings_vp5gy")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label2" unique_id=305157079]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.189
+anchor_top = -3.7100003
+anchor_right = -1.189
+anchor_bottom = -3.7100003
+offset_left = 685.32513
+offset_top = 255.98999
+offset_right = 981.32513
+offset_bottom = 324.99
+text = "0"
+label_settings = SubResource("LabelSettings_vp5gy")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=933598880]
+offset_left = 257.99994
+offset_top = 72.00003
+offset_right = 965.99994
+offset_bottom = 209.00003
+text = "FINISH"
+label_settings = SubResource("LabelSettings_yi81r")
+horizontal_alignment = 1
+
+[node name="exit" type="Button" parent="CanvasLayer" unique_id=1197583403]
+anchors_preset = -1
+offset_left = 344.0
+offset_top = 480.0
+offset_right = 877.0
+offset_bottom = 606.0
+size_flags_horizontal = 0
+text = "Exit to main menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="CanvasLayer/exit" to="." method="_on_exit_button_down"]

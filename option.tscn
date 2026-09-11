@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c62jhj81k08hu"]
+
+[ext_resource type="Script" uid="uid://b32j6x6rahohn" path="res://option.gd" id="1_cd5v0"]
+
+[sub_resource type="Gradient" id="Gradient_nbagm"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yi81r"]
+gradient = SubResource("Gradient_nbagm")
+
+[sub_resource type="SystemFont" id="SystemFont_n1api"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbfq1"]
+font = SubResource("SystemFont_n1api")
+font_size = 40
+
+[sub_resource type="SystemFont" id="SystemFont_gbfq1"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xta5d"]
+font = SubResource("SystemFont_gbfq1")
+font_size = 30
+
+[sub_resource type="SystemFont" id="SystemFont_cd5v0"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtwqn"]
+font = SubResource("SystemFont_cd5v0")
+font_size = 20
+
+[node name="option" type="Control" unique_id=1565979743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cd5v0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=97901509]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1406750154]
+modulate = Color(1, 1, 1, 0.87058824)
+z_index = -5
+z_as_relative = false
+position = Vector2(608, 325)
+scale = Vector2(3.0507813, 566)
+texture = SubResource("GradientTexture1D_yi81r")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=933598880]
+offset_left = 240.0
+offset_top = 80.0
+offset_right = 952.0
+offset_bottom = 145.0
+text = "Option
+"
+label_settings = SubResource("LabelSettings_gbfq1")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1146778626]
+offset_left = 264.0
+offset_top = 144.0
+offset_right = 976.0
+offset_bottom = 330.0
+text = "You can adjust the distance of the road
+
+-Road are devide into segments
+-You have to drive though all segments to win
+
+-by default : number of segments = 5
+                 : segments length      = 100000
+
+*Setting lenght below 50000 may cause glitch
+	"
+label_settings = SubResource("LabelSettings_xta5d")
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=158121175]
+offset_left = 295.0
+offset_top = 437.0
+offset_right = 523.0
+offset_bottom = 461.0
+text = "number of segments"
+label_settings = SubResource("LabelSettings_xta5d")
+
+[node name="Label5" type="Label" parent="CanvasLayer" unique_id=658193105]
+offset_left = 821.0
+offset_top = 496.0
+offset_right = 1049.0
+offset_bottom = 628.0
+text = "easy     :  5, 80000
+
+normal  :  5, 100000
+
+hard     :  6, 200000"
+label_settings = SubResource("LabelSettings_rtwqn")
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=1086340326]
+offset_left = 293.0
+offset_top = 498.0
+offset_right = 521.0
+offset_bottom = 522.0
+text = "segments length"
+label_settings = SubResource("LabelSettings_xta5d")
+
+[node name="exit" type="Button" parent="CanvasLayer" unique_id=1197583403]
+self_modulate = Color(1, 0, 0.1510477, 1)
+anchors_preset = -1
+offset_left = 1024.0
+offset_top = 568.0
+offset_right = 1112.0
+offset_bottom = 614.0
+size_flags_horizontal = 0
+text = "close"
+metadata/_edit_use_anchors_ = true
+
+[node name="num" type="LineEdit" parent="CanvasLayer" unique_id=796216691]
+offset_left = 552.0
+offset_top = 433.0
+offset_right = 693.0
+offset_bottom = 464.0
+
+[node name="len" type="LineEdit" parent="CanvasLayer" unique_id=917407218]
+offset_left = 552.0
+offset_top = 491.0
+offset_right = 695.0
+offset_bottom = 522.0
+
+[connection signal="button_down" from="CanvasLayer/exit" to="." method="_on_exit_button_down"]
+[connection signal="text_submitted" from="CanvasLayer/num" to="." method="_on_num_text_submitted"]
+[connection signal="text_submitted" from="CanvasLayer/len" to="." method="_on_len_text_submitted"]

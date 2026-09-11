@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://dwhq0asexitol"]
+
+[ext_resource type="Script" uid="uid://ra1rwnad7pjg" path="res://title.gd" id="1_oyqm6"]
+[ext_resource type="Texture2D" uid="uid://d3qbtrakagnae" path="res://icon.svg" id="2_a2fj8"]
+[ext_resource type="Texture2D" uid="uid://coxdgspi13kmv" path="res://sprite/above.png" id="3_nuqgq"]
+[ext_resource type="Texture2D" uid="uid://c3kxks0joiux4" path="res://sprite/jo2.png" id="4_lx2ly"]
+[ext_resource type="Texture2D" uid="uid://dm7w0nht3jjwu" path="res://sprite/front.png" id="5_jil77"]
+[ext_resource type="Script" uid="uid://b1eh3e0h40kjb" path="res://ui.gd" id="6_16uvt"]
+[ext_resource type="Script" uid="uid://di38ykdi8v08v" path="res://wheelarea.gd" id="7_upcoo"]
+[ext_resource type="Texture2D" uid="uid://d1l8p5pgvopri" path="res://sprite/wheel.png" id="8_gjryj"]
+
+[sub_resource type="SystemFont" id="SystemFont_66nac"]
+font_names = PackedStringArray("supermarket", "iannnnn-TIGER")
+font_weight = 600
+
+[sub_resource type="LabelSettings" id="LabelSettings_3wn4u"]
+line_spacing = 5.0
+font = SubResource("SystemFont_66nac")
+font_size = 93
+
+[sub_resource type="SystemFont" id="SystemFont_a2fj8"]
+font_names = PackedStringArray("Sans-Serif")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_66nac"]
+font = SubResource("SystemFont_a2fj8")
+font_size = 150
+font_color = Color(1, 0.28304255, 0, 1)
+outline_size = 100
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 0.5803922)
+shadow_offset = Vector2(1, 40)
+
+[sub_resource type="Gradient" id="Gradient_0824t"]
+colors = PackedColorArray(0.69648564, 0.9304411, 0.9532835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nuqgq"]
+gradient = SubResource("Gradient_0824t")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ranr"]
+radius = 84.46409
+
+[node name="title" type="Node2D" unique_id=1863444018]
+script = ExtResource("1_oyqm6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=307056082]
+
+[node name="play" type="Button" parent="CanvasLayer" unique_id=728930522]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 50
+z_as_relative = false
+anchors_preset = -1
+anchor_left = 0.509
+anchor_right = 0.509
+offset_left = -393.36798
+offset_top = 283.0
+offset_right = -73.36798
+offset_bottom = 419.0
+
+[node name="play2" type="Button" parent="CanvasLayer/play" unique_id=1966015729]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 50
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.509
+anchor_right = 0.509
+offset_left = -162.88
+offset_right = 157.12
+offset_bottom = 136.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/play" unique_id=756074916]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 322.0
+offset_bottom = 147.0
+text = "PLAY"
+label_settings = SubResource("LabelSettings_3wn4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="control" type="Button" parent="CanvasLayer" unique_id=739191843]
+self_modulate = Color(0.052891996, 0.052891996, 0.052891996, 1)
+z_index = 50
+z_as_relative = false
+anchors_preset = -1
+anchor_left = 0.509
+anchor_right = 0.509
+offset_left = -138.36798
+offset_top = 480.0
+offset_right = 181.63202
+offset_bottom = 616.0
+scale = Vector2(0.62, 0.62)
+
+[node name="Label" type="Label" parent="CanvasLayer/control" unique_id=1587984134]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 322.0
+offset_bottom = 147.0
+text = "control"
+label_settings = SubResource("LabelSettings_3wn4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="option" type="Button" parent="CanvasLayer" unique_id=1184307432]
+self_modulate = Color(0.052891996, 0.052891996, 0.052891996, 1)
+z_index = 50
+z_as_relative = false
+anchors_preset = -1
+anchor_left = 0.509
+anchor_right = 0.509
+offset_left = -354.36798
+offset_top = 480.0
+offset_right = -34.36798
+offset_bottom = 616.0
+scale = Vector2(0.62, 0.62)
+
+[node name="Label" type="Label" parent="CanvasLayer/option" unique_id=948533065]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 322.0
+offset_bottom = 147.0
+text = "option"
+label_settings = SubResource("LabelSettings_3wn4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Sprite2D" parent="CanvasLayer" unique_id=1096336572]
+visible = false
+position = Vector2(640, 176.00002)
+scale = Vector2(5.625, 1.875)
+texture = ExtResource("2_a2fj8")
+
+[node name="bg" type="Sprite2D" parent="CanvasLayer" unique_id=2131011833]
+z_index = -1
+position = Vector2(639.5, 360)
+scale = Vector2(2.071885, 2.1028569)
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=27487917]
+offset_left = 79.0
+offset_top = 61.0
+offset_right = 1280.0
+offset_bottom = 308.2857
+scale = Vector2(0.7, 0.7)
+text = "Driving is hard"
+label_settings = SubResource("LabelSettings_66nac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mirror" type="Sprite2D" parent="CanvasLayer" unique_id=1653991048]
+position = Vector2(560, -32.00003)
+scale = Vector2(0.8692308, 0.86923075)
+texture = ExtResource("3_nuqgq")
+metadata/_edit_lock_ = true
+
+[node name="jo2" type="Sprite2D" parent="CanvasLayer" unique_id=613297197]
+modulate = Color(0.99060804, 1, 0.8825732, 1)
+z_index = -1
+position = Vector2(566.49994, 306)
+scale = Vector2(5.4023433, 724)
+texture = SubResource("GradientTexture1D_nuqgq")
+metadata/_edit_lock_ = true
+
+[node name="jo" type="Sprite2D" parent="CanvasLayer" unique_id=1169696926]
+modulate = Color(0.99060804, 1, 0.8825732, 1)
+z_index = 2
+position = Vector2(563, 396.99994)
+scale = Vector2(0.6458335, 0.6458335)
+texture = ExtResource("4_lx2ly")
+metadata/_edit_lock_ = true
+
+[node name="ui" type="Sprite2D" parent="CanvasLayer" unique_id=785788659]
+position = Vector2(608, 537)
+scale = Vector2(0.6976047, 0.61616886)
+texture = ExtResource("5_jil77")
+script = ExtResource("6_16uvt")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ui" unique_id=784460936]
+autostart = true
+
+[node name="wheelarea" type="Area2D" parent="CanvasLayer" unique_id=1791762738]
+position = Vector2(888, 456)
+scale = Vector2(2, 2)
+script = ExtResource("7_upcoo")
+metadata/_edit_lock_ = true
+
+[node name="wheel" type="Sprite2D" parent="CanvasLayer/wheelarea" unique_id=984797329]
+position = Vector2(0.49999428, 1.5067892)
+scale = Vector2(0.23337847, 0.23337847)
+texture = ExtResource("8_gjryj")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/wheelarea" unique_id=642582304]
+shape = SubResource("CircleShape2D_3ranr")
+metadata/_edit_lock_ = true
+
+[connection signal="button_down" from="CanvasLayer/play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="CanvasLayer/control" to="." method="_on_control_button_down"]
+[connection signal="button_down" from="CanvasLayer/option" to="." method="_on_option_button_down"]
+[connection signal="timeout" from="CanvasLayer/ui/Timer" to="CanvasLayer/ui" method="_on_timer_timeout"]
+[connection signal="input_event" from="CanvasLayer/wheelarea" to="CanvasLayer/wheelarea" method="_on_input_event"]

@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://mhqept6ilmx3"]
+
+[ext_resource type="Script" uid="uid://d3kg72cwb2vcu" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dm7w0nht3jjwu" path="res://sprite/front.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://coxdgspi13kmv" path="res://sprite/above.png" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://di38ykdi8v08v" path="res://wheelarea.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c3kxks0joiux4" path="res://sprite/jo2.png" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://d1l8p5pgvopri" path="res://sprite/wheel.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://b1eh3e0h40kjb" path="res://ui.gd" id="5_272bh"]
+[ext_resource type="AudioStream" uid="uid://dnft1hjbxb7pw" path="res://audio/start.mp3" id="8_dg77c"]
+[ext_resource type="AudioStream" uid="uid://0mq7meyu7106" path="res://audio/gear1.mp3" id="9_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://d2jnbodvv2vt5" path="res://audio/acc.mp3" id="10_w48qg"]
+[ext_resource type="AudioStream" uid="uid://bf0e7i3oxmfkd" path="res://audio/carNoise.mp3" id="11_vivmo"]
+[ext_resource type="AudioStream" uid="uid://csknwh3mbe5ej" path="res://audio/crash.mp3" id="12_2cqfq"]
+[ext_resource type="AudioStream" uid="uid://61ffcxflfi28" path="res://audio/coll.mp3" id="13_w48qg"]
+[ext_resource type="AudioStream" uid="uid://doo62jc8rx1ff" path="res://audio/win.mp3" id="14_vivmo"]
+
+[sub_resource type="SystemFont" id="SystemFont_272bh"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font = SubResource("SystemFont_272bh")
+font_size = 50
+
+[sub_resource type="SystemFont" id="SystemFont_h2yge"]
+font_names = PackedStringArray("supermarket")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font = SubResource("SystemFont_h2yge")
+font_size = 50
+font_color = Color(1, 0.34509805, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 84.46409
+
+[node name="main" type="Node2D" unique_id=384978572]
+script = ExtResource("1_0xm2m")
+road_width = 2000.0
+acc = 10.0
+splimit = 70.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1211003727]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1363025913]
+offset_right = 227.01219
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=159329062]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 194.0
+offset_bottom = 59.0
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_5vw27")
+
+[node name="speed" type="Label" parent="CanvasLayer" unique_id=1635582945]
+modulate = Color(1.3131658, 1.3131658, 1.3131658, 1)
+z_index = 3
+offset_left = 498.0
+offset_top = 395.0
+offset_right = 634.0
+offset_bottom = 472.0
+scale = Vector2(0.6, 0.6)
+text = "100"
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="slash" type="Label" parent="CanvasLayer" unique_id=1703348560]
+modulate = Color(1.3131658, 1.3131658, 1.3131658, 1)
+z_index = 3
+offset_left = 546.0
+offset_top = 394.0
+offset_right = 595.0
+offset_bottom = 471.0
+scale = Vector2(0.6, 0.6)
+text = "/"
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="spli" type="Label" parent="CanvasLayer" unique_id=2037457894]
+modulate = Color(1.3131658, 1.3131658, 1.3131658, 1)
+z_index = 3
+offset_left = 575.0
+offset_top = 394.0
+offset_right = 702.0
+offset_bottom = 471.0
+scale = Vector2(0.6, 0.6)
+text = "100"
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="mirror" type="Sprite2D" parent="CanvasLayer" unique_id=225564490]
+position = Vector2(560, -32.00003)
+scale = Vector2(0.8692308, 0.86923075)
+texture = ExtResource("2_lquwl")
+metadata/_edit_lock_ = true
+
+[node name="jo" type="Sprite2D" parent="CanvasLayer" unique_id=202415479]
+modulate = Color(0.99060804, 1, 0.8825732, 1)
+z_index = 1
+position = Vector2(563, 396.99994)
+scale = Vector2(0.6458335, 0.6458335)
+texture = ExtResource("3_7mycd")
+metadata/_edit_lock_ = true
+
+[node name="ui" type="Sprite2D" parent="CanvasLayer" unique_id=1812820719]
+position = Vector2(608, 537)
+scale = Vector2(0.6976047, 0.61616886)
+texture = ExtResource("2_1bvp3")
+script = ExtResource("5_272bh")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ui" unique_id=1728959725]
+autostart = true
+
+[node name="wheelarea" type="Area2D" parent="CanvasLayer" unique_id=1530377425]
+position = Vector2(888, 456)
+scale = Vector2(2, 2)
+script = ExtResource("3_1bvp3")
+metadata/_edit_lock_ = true
+
+[node name="wheel" type="Sprite2D" parent="CanvasLayer/wheelarea" unique_id=1559987155]
+z_index = 2
+position = Vector2(0.49999428, 1.5067892)
+scale = Vector2(0.23337847, 0.23337847)
+texture = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/wheelarea" unique_id=708094885]
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="treeH" type="Timer" parent="." unique_id=377709387]
+wait_time = 2.0
+
+[node name="colsp" type="Timer" parent="." unique_id=115096820]
+autostart = true
+
+[node name="start" type="AudioStreamPlayer" parent="." unique_id=173522351]
+stream = ExtResource("8_dg77c")
+
+[node name="lowergear" type="AudioStreamPlayer" parent="." unique_id=1795248817]
+stream = ExtResource("9_ycdy4")
+volume_db = -8.0
+
+[node name="accer" type="AudioStreamPlayer" parent="." unique_id=1307948179]
+stream = ExtResource("10_w48qg")
+volume_db = -10.0
+
+[node name="carnoise" type="AudioStreamPlayer" parent="." unique_id=1211356344]
+stream = ExtResource("11_vivmo")
+volume_db = 3.0
+autoplay = true
+
+[node name="hittree" type="AudioStreamPlayer" parent="." unique_id=1959214620]
+stream = ExtResource("12_2cqfq")
+volume_db = 2.0
+
+[node name="collect" type="AudioStreamPlayer" parent="." unique_id=389128394]
+stream = ExtResource("13_w48qg")
+
+[node name="win" type="AudioStreamPlayer" parent="." unique_id=1241418228]
+stream = ExtResource("14_vivmo")
+volume_db = -3.0
+
+[connection signal="timeout" from="CanvasLayer/ui/Timer" to="CanvasLayer/ui" method="_on_timer_timeout"]
+[connection signal="input_event" from="CanvasLayer/wheelarea" to="CanvasLayer/wheelarea" method="_on_input_event"]
+[connection signal="timeout" from="treeH" to="." method="_on_tree_h_timeout"]
+[connection signal="timeout" from="colsp" to="." method="_on_colsp_timeout"]

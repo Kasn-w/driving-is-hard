@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bq4ud364hkdf1"]
+
+[ext_resource type="Script" uid="uid://ca7t40vihhsc" path="res://new folder/fake_road (1).gd" id="1_37kl0"]
+
+[node name="test" type="Node2D" unique_id=1375213511]
+script = ExtResource("1_37kl0")
