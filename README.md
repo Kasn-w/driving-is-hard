@@ -6,9 +6,11 @@ A driving simulator but you had to steer the wheel yourself. Hold it at the righ
 ![gameplay screenshot](_forREADME/preview.gif)
 
 ## About
+>**Disclaimer:** The pseudo-3D projection code is AI-generated. The original code that use for the game can be found in folder name `AI_generate_pseudo3D_projection`
+
 Built solo with [Godot 4.6.2](https://godotengine.org/) in 7 days for [The Very Serious Juniper Dev Game Jam](https://itch.io/jam/theveryseriousjuniperdevgamejam), under the theme "Spin To Win".
 
-*Note: Actual development time was about 2 days due to college work during the week.*
+***Note:** Actual development time was about 2 days due to college work during the week.*
 
 ## How to Play
 - Control
